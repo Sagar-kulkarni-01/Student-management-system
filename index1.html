@@ -1,0 +1,105 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #fafafa;
+        }
+
+        #container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1565c0; 
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #f57c00; 
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #f57c00; 
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #f57c00; 
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #e65100; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Admin Login</h1>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        async function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('http://localhost:3001/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert(data.message);
+               
+                window.location.href = 'student-management.html';
+            } else {
+                alert(data.message);
+            }
+        }
+    </script>
+
+</body>
+</html>

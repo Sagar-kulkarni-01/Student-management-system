@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: grey;
+}
+
+#container {
+    background-color: rgb(168, 168, 168);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #1565c0; /* Dark Blue */
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #0f0801; /* Orange */
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #2a0d0d; /* Orange */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #f57c00; /* Orange */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e96b28; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #468bdf; 
+    color: white;
+}
+
+button.delete-btn {
+    background-color: #d32f2f; /* Red */
+}
+
+button.delete-btn:hover {
+    background-color: #b71c1c; /* Darker Red */
+}
